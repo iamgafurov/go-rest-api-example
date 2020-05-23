@@ -1,11 +1,9 @@
 package crud
-//package GetMainContent
+
 
 import (
 	"context"
 	"charitable/model"
-	service "charitable/service"
-	logger "charitable/logger"
 	"net/http"
 	"encoding/json"
 	"strconv"
@@ -33,7 +31,6 @@ import (
 		w.Write(response)
 	}
 
-	//getFoodSize ()
 
 func (repo *Repo) getFoodSizeByID(foodSizeID int) (*model.FoodSize ,error){
 	
@@ -158,7 +155,7 @@ func (repo *Repo) GetFood(ctx context.Context, org_id int64, food_id int64) (*mo
 func (repo *Repo) CreateFood(food model.OrgFood )(model.OrgFood,error){
 
 		rows ,err:=repo.DBConn.Query("INSERT INTO public.org_foods(org_id ,foodname,foods_category_id,description) VALUES($1,$2,$3,$4) RETURNING org_food_id",food.OrgID,food.FoodName,food.FoodCategory,food.FoodDescription)
-		//rows ,errr:=db.Query("insert into public.org_foods(org_id ,foodname,foods_category_id) values($1,$2,$3) RETURNING org_food_id",food.Org_id,food.FoodName,food.FoodCategory).Scan(&food.OrgFood_id)
+		
 		if err!=nil{
 			logger.Logger("ERROR", "CreatFood", err)
 			panic(err)
@@ -245,7 +242,7 @@ func (repo *Repo) UpdateFood(food model.OrgFood, food_id string,org_id int64 )(m
 		println("foodinfoid: ", f.FoodInfoID)
 	}	
 
-	//defer rows.Close()
+	
 	
 	
 
