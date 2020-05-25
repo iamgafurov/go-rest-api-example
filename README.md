@@ -26,12 +26,12 @@ $ ./go-rest-api-example
 ## Data Structure
 ```json
  {
-	"FoodInfoID": 	int ,   		
-	"OrgFoodID" : 	int	,			
-	"Size"			:   FoodSize ,		
-	"CookTime" 	:	  string ,			
-	"PackingTime":	string	,		
-	"Price"     : 			float32		
+	"FoodInfoID"	: 	int ,   		
+	"OrgFoodID" 	: 	int	,			
+	"Size"		:   	FoodSize ,		
+	"CookTime" 	:	string ,			
+	"PackingTime"	:	string	,		
+	"Price"     	: 	float32		
 }
 
 FoodSize struct {
