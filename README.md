@@ -33,4 +33,10 @@ $ ./go-rest-api-example
 	"PackingTime":	string	,		
 	"Price"     : 			float32		
 }
+
+FoodSize struct {
+	FoodSizeID 		int			
+	Name 			string			
+}
+
 ```
